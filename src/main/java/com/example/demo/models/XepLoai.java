@@ -10,4 +10,12 @@ public enum XepLoai {
     public String getXepLoai() {
         return xepLoai;
     }
+    public static XepLoai fromString(String xepLoai) {
+        for (XepLoai xepLoai1 : XepLoai.values()) {
+            if (xepLoai1.getXepLoai().equals(xepLoai)) {
+                return xepLoai1;
+            }
+        }
+        throw new IllegalArgumentException("Invalid XepLoai: " + xepLoai);
+    }
 }

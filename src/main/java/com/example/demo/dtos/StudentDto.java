@@ -1,11 +1,11 @@
 package com.example.demo.dtos;
 
 import com.example.demo.models.XepLoai;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Past;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.validation.constraints.*;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -30,5 +30,6 @@ public class StudentDto {
 
     @JsonProperty("xeploai")
     @NotNull(message = "Xep loai can not be null")
+    @Enumerated(EnumType.STRING)
     private XepLoai xeploai;
 }
