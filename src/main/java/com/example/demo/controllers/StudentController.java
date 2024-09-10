@@ -22,7 +22,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("{api_prefix}/student")
+@RequestMapping("api/v1/student")
+@CrossOrigin(origins = "http://localhost:3000")
 @RequiredArgsConstructor
 public class StudentController {
 
